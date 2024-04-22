@@ -1,3 +1,9 @@
 cache/
 .env
 broadcast/
+out/
+artifacts/
+node_modules/
+package-lock.json
+.vscode/
+typechain-types/

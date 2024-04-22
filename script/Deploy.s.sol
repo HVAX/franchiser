@@ -13,8 +13,8 @@ contract Deploy is Script {
 
     function run() public {
         vm.startBroadcast();
-        FranchiserFactory franchiserFactory = new FranchiserFactory(ARB);
-        new FranchiserLens(ARB, franchiserFactory);
+        // FranchiserFactory franchiserFactory = new FranchiserFactory(ARB);
+        new FranchiserLens(ARB, new FranchiserFactory(ARB));
         vm.stopBroadcast();
     }
 }

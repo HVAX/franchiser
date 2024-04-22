@@ -3,9 +3,9 @@ pragma solidity 0.8.15;
 
 import {IFranchiserFactory} from "./interfaces/FranchiserFactory/IFranchiserFactory.sol";
 import {FranchiserImmutableState} from "./base/FranchiserImmutableState.sol";
-import {Address} from "openzeppelin-contracts/contracts/utils/Address.sol";
-import {Clones} from "openzeppelin-contracts/contracts/proxy/Clones.sol";
-import {SafeTransferLib, ERC20} from "solmate/utils/SafeTransferLib.sol";
+import {Address} from "openzeppelin-contracts/utils/Address.sol";
+import {Clones} from "../lib/openzeppelin-contracts/contracts/proxy/Clones.sol";
+import {SafeTransferLib, ERC20} from "solmate/src/utils/SafeTransferLib.sol";
 import {IVotingToken} from "./interfaces/IVotingToken.sol";
 import {Franchiser} from "./Franchiser.sol";
 
@@ -16,6 +16,8 @@ contract FranchiserFactory is IFranchiserFactory, FranchiserImmutableState {
 
     /// @inheritdoc IFranchiserFactory
     uint96 public constant INITIAL_MAXIMUM_SUBDELEGATEES = 2**3; // 8
+
+    uint8 public constant FORCE_RECOMPILE = 0;
 
     /// @inheritdoc IFranchiserFactory
     Franchiser public immutable franchiserImplementation;

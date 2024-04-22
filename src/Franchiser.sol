@@ -3,11 +3,11 @@ pragma solidity 0.8.15;
 
 import {IFranchiser} from "./interfaces/Franchiser/IFranchiser.sol";
 import {FranchiserImmutableState} from "./base/FranchiserImmutableState.sol";
-import {Owned} from "solmate/auth/Owned.sol";
-import {EnumerableSet} from "openzeppelin-contracts/contracts/utils/structs/EnumerableSet.sol";
-import {Address} from "openzeppelin-contracts/contracts/utils/Address.sol";
-import {Clones} from "openzeppelin-contracts/contracts/proxy/Clones.sol";
-import {SafeTransferLib, ERC20} from "solmate/utils/SafeTransferLib.sol";
+import {Owned} from "solmate/src/auth/Owned.sol";
+import {EnumerableSet} from "../lib/openzeppelin-contracts/contracts/utils/structs/EnumerableSet.sol";
+import {Address} from "../lib/openzeppelin-contracts/contracts/utils/Address.sol";
+import {Clones} from "../lib/openzeppelin-contracts/contracts/proxy/Clones.sol";
+import {SafeTransferLib, ERC20} from "../lib/solmate/src/utils/SafeTransferLib.sol";
 import {IVotingToken} from "./interfaces/IVotingToken.sol";
 
 contract Franchiser is IFranchiser, FranchiserImmutableState, Owned {
